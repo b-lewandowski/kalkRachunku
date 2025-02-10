@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="kalkRachunku.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="200,0"
+            Spacing="5">
+
+            <Label
+                Text="Kalkulator rachunku"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Twoja kwota:"/>
+
+            <Entry 
+                x:Name="kwota"
+                Text="0.0"
+                MinimumHeightRequest="0"
+                MinimumWidthRequest="200"
+                MaximumWidthRequest="200"
+                HorizontalOptions="Start"
+                Placeholder="Wpisz kwote"
+                Completed="kwota_Completed"/>
+
+            <Label
+                x:Name="napiwekTxt"
+                Text="Ustaw procent napiwku (0%):"/>
+
+            <Slider
+                x:Name="napiwek"
+                HorizontalOptions="FillAndExpand"
+                ValueChanged="napiwek_ValueChanged"
+                Maximum="50"/>
+
+            <Label
+                Text="Lub wybierz"/>
+
+            <HorizontalStackLayout
+                Spacing="5">
+
+                <Button
+                    x:Name="a"
+                    Text="10%" 
+                    HorizontalOptions="Center" 
+                    Clicked="a_Clicked"/>
+                <Button
+                    x:Name="b"
+                    Text="15%" 
+                    HorizontalOptions="Center" 
+                    Clicked="b_Clicked"/>
+                <Button
+                    x:Name="c"
+                    Text="20%" 
+                    HorizontalOptions="Center" 
+                    Clicked="c_Clicked"/>
+            </HorizontalStackLayout>
+
+            <Label
+                x:Name="liczbaOsob"
+                Text="Liczba osob: 1"/>
+
+            <HorizontalStackLayout
+                Spacing="5">
+                
+                <Button
+                    x:Name="dodajOsobe"
+                    Text="Dodaj osobe" 
+                    HorizontalOptions="Center" 
+                    Clicked="dodajOsobe_Clicked"/>
+                <Button
+                    x:Name="usunOsobe"
+                    Text="Odejmij osobe" 
+                    HorizontalOptions="Center" 
+                    Clicked="usunOsobe_Clicked"/>
+            </HorizontalStackLayout>
+
+            <Label
+                x:Name="wartKwota"
+                IsVisible="False"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" 
+                Text="Kwota: 0"/>
+            <Label
+                x:Name="wartNapiwek"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" 
+                Text="Napiwek: 0"/>
+            <Label
+                x:Name="lacznaKwota"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" 
+                Text="Łączna kwota: 0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
