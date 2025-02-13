@@ -14,7 +14,7 @@
 
         private void napiwek_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            procent = e.NewValue;
+            procent = Math.Floor(e.NewValue);
             napiwekTxt.Text = ("Ustaw procent napiwku (" + Math.Floor(procent).ToString() + "%): ");
             oblicz();
         }
@@ -63,13 +63,11 @@
         private void oblicz()
         {
             wartKwota.Text = "Kwota: " + kwotaRachunku;
-            wartKwota.IsVisible = false;
             wartNapiwek.Text = "Napiwek: " + (Math.Round((procent / 100) * kwotaRachunku, 3));
             lacznaKwota.Text = "Łączna kwota: " + (Math.Round(kwotaRachunku + ((procent / 100) * kwotaRachunku), 3));
             if (osoby > 1)
             {
                 wartKwota.Text = "Kwota: " + (Math.Round(kwotaRachunku / osoby, 3));
-                wartKwota.IsVisible = true;
                 wartNapiwek.Text = "Napiwek: " + (Math.Round(((procent / 100) * kwotaRachunku) / osoby, 3));
                 lacznaKwota.Text = "Łączna kwota: " + (Math.Round((kwotaRachunku + ((procent / 100) * kwotaRachunku)) / osoby, 3));
             }

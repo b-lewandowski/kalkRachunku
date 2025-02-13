@@ -8,12 +8,81 @@
             Padding="200,0"
             Spacing="5">
 
-            <Label
-                Text="Kalkulator rachunku"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+            <!--<HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="5">
+                
+                <Label
+                    Margin="0, 25, 0, 0"
+                    x:Name="lacznaKwota"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Łączna kwota: 0"/>
+                
+                <VerticalStackLayout
+                    VerticalOptions="Center" 
+                    Spacing="5">
+                    
+                    <Label
+                        x:Name="wartKwota"
+                        Style="{StaticResource Headline}"
+                        SemanticProperties.HeadingLevel="Level1" 
+                        HorizontalOptions="Center"
+                        Text="Kwota: 0"/>
+                    
+                    <Label
+                        x:Name="wartNapiwek"
+                        Style="{StaticResource Headline}"
+                        SemanticProperties.HeadingLevel="Level1" 
+                        HorizontalOptions="Center"
+                        Text="Napiwek: 0"/>
+                    
+                </VerticalStackLayout>
+            </HorizontalStackLayout>!-->
+
+            <Grid
+                HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    x:Name="lacznaKwota"
+                    Grid.Row="1"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Łączna kwota: 0"/>
+
+                <Label
+                        x:Name="wartKwota"
+                    Grid.Column="1"
+                        Style="{StaticResource Headline}"
+                        SemanticProperties.HeadingLevel="Level1" 
+                        HorizontalOptions="Center"
+                        Text="Kwota: 0"/>
+
+                <Label
+                        x:Name="wartNapiwek"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                        Style="{StaticResource Headline}"
+                        SemanticProperties.HeadingLevel="Level1" 
+                        HorizontalOptions="Center"
+                        Text="Napiwek: 0"/>
+            </Grid>
 
             <Label
+                Margin="0, 20, 0, 0"
+                HorizontalOptions="Center"
                 Text="Twoja kwota:"/>
 
             <Entry 
@@ -22,24 +91,29 @@
                 MinimumHeightRequest="0"
                 MinimumWidthRequest="200"
                 MaximumWidthRequest="200"
-                HorizontalOptions="Start"
+                HorizontalOptions="Center"
                 Placeholder="Wpisz kwote"
                 Completed="kwota_Completed"/>
 
             <Label
                 x:Name="napiwekTxt"
+                Margin="0, 20, 0, 0"
+                HorizontalOptions="Center"
                 Text="Ustaw procent napiwku (0%):"/>
 
             <Slider
                 x:Name="napiwek"
-                HorizontalOptions="FillAndExpand"
+                HorizontalOptions="Fill"
                 ValueChanged="napiwek_ValueChanged"
                 Maximum="50"/>
 
             <Label
+                HorizontalOptions="Center"
+                Margin="0, 20, 0, 0"
                 Text="Lub wybierz"/>
 
             <HorizontalStackLayout
+                HorizontalOptions="Center"
                 Spacing="5">
 
                 <Button
@@ -61,11 +135,14 @@
 
             <Label
                 x:Name="liczbaOsob"
+                Margin="0, 20, 0, 0"
+                HorizontalOptions="Center"
                 Text="Liczba osob: 1"/>
 
             <HorizontalStackLayout
+                HorizontalOptions="Center"
                 Spacing="5">
-                
+
                 <Button
                     x:Name="dodajOsobe"
                     Text="Dodaj osobe" 
@@ -77,23 +154,6 @@
                     HorizontalOptions="Center" 
                     Clicked="usunOsobe_Clicked"/>
             </HorizontalStackLayout>
-
-            <Label
-                x:Name="wartKwota"
-                IsVisible="False"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" 
-                Text="Kwota: 0"/>
-            <Label
-                x:Name="wartNapiwek"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" 
-                Text="Napiwek: 0"/>
-            <Label
-                x:Name="lacznaKwota"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" 
-                Text="Łączna kwota: 0"/>
         </VerticalStackLayout>
     </ScrollView>
 
